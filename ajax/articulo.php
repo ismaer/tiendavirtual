@@ -1,4 +1,5 @@
 <?php
+require_once "../modelos/Categoria.php";
 require_once "../modelos/Articulo.php";
 require_once "../modelos/Categoria.php";
 
