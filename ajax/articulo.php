@@ -2,6 +2,7 @@
 require_once "../modelos/Articulo.php";
 require_once "../modelos/Categoria.php";
 
+
 $articulo=new Articulo();
 
 $idarticulo=isset($_POST["idarticulo"])? limpiarCadena($_POST["idarticulo"]):"";
