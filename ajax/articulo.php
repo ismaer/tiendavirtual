@@ -70,7 +70,7 @@ switch ($_GET["op"]){
 				"2"=>$reg->categoria,
 				"3"=>$reg->codigo,
 				"4"=>$reg->stock,
-				"5"=>$reg->imagen,
+				"5"=>$reg->"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
 				"6"=>($reg->condicion)?'<span class="label bg-green ">Activado</span>':'<span class="label bg-red">Desactivado</span>'
 				);
 		}
