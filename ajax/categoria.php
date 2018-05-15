@@ -8,7 +8,7 @@ $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 
 switch ($_GET["op"]){
-	case 'guardaryeditar':
+	case 'guardaryeditar'
 		if (empty($idcategoria)) {
 			$rspta=$categoria->insertar($nombre, $descripcion);
 			echo $rspta ? "Categoria registrada": "Categoria no se pudo registrar";
@@ -20,7 +20,7 @@ switch ($_GET["op"]){
 	break;
 		
 	case 'desactivar':
-		$rspta=$categoria->desactivar($idcategoria);
+		$rspta=$categoria->desactivar($idcategoria);;;;;;
 		echo $rspta ? "Categoria Desactivada": "Categoria no se puede Desactivar";
 	break;
 	
