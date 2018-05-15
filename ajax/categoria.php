@@ -20,7 +20,7 @@ switch ($_GET["op"]){
 	break;
 		
 	case 'desactivar':
-		$rspta=$categoria->desactivar($idcategoria);;;;;;
+		$rspta=$categoria->desactivar($idcategoria);
 		echo $rspta ? "Categoria Desactivada": "Categoria no se puede Desactivar";
 	break;
 	
