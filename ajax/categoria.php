@@ -6,9 +6,9 @@ $categoria=new Categoria();
 $idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
-var_dump("prueba"); die();
+
 switch ($_GET["op"]){
-	case 'guardaryeditar'
+	case 'guardaryeditar':
 		if(empty($idcategoria)) {
 			$rspta=$categoria->insertar($nombre, $descripcion);
 			echo $rspta ? "Categoria registrada": "Categoria no se pudo registrar";
@@ -39,7 +39,6 @@ switch ($_GET["op"]){
 		$rspta=$categoria->listar();
 		//Vamos a declarar un array
 		$data= array();
-
 		while ($reg=$rspta->fetch_object()) {
 			$data[]=array(
 				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idcategoria.')"><i class="fa fa-pencil"> </i></button>'.

@@ -74,7 +74,7 @@ function listar()
 		"order": [[0,"desc"]] //Ordenar (columna,orden)
 
 	}).DataTable();
-
+	
 }
 //Funcion para guardar o editar
 
