@@ -21,11 +21,11 @@ switch ($_GET["op"]){
 		}
 		else
 		{
-			$ext = explode(".", $_FILES["imagen"]["name"]);
+			$ext = explode(".", $_FILES["imagen"]["name"]);  //extraigo la extension del archivo
 			if ($_FILES['imagen']['type']== "image/jpg" || $_FILES["imagen"]["type"]== "image/jpeg" || $_FILES["imagen"]["type"]== "image/png") 
 			{
-				$imagen = round(microtime(true)) . '.' . end($ext);
-				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos". $imagen);	
+				$imagen = round(microtime(true)) . '.' . end($ext); //renombro la imagen
+				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/". $imagen);	
 			}
 		}
 
