@@ -21,6 +21,7 @@
     <script   src="../public/datatables/vfs_fonts.js" ></script>
 
     <script type="text/javascript" src="../public/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap-select.min.js"></script>
 
   </body>
 </html>

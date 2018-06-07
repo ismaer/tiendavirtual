@@ -44,14 +44,32 @@ require 'header.php';
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">
                       <form name="formulario" id="formulario" method="POST">
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-                          <label>Nombre:</label>
-                          <input type="hidden" class="form-control" name="idcategoria" id="idcategoria">
-                          <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
+                          <label>Nombre(*):</label>
+                          <input type="hidden" class="form-control" name="idarticulo" id="idarticulo">
+                          <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
                         </div>
-
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                          <label>Categoria(*):</label>
+                          <select id="idcategoria" name="idcategoria" class="form-control selectpicker"  data-live-search="true"  required>
+                            
+                          </select>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                          <label>Stock(*):</label>
+                          <input type="number" class="form-control" name="stock" id="stock" required>
+                        </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
                           <label>Descripcion:</label>
                           <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripcion">
+                        </div>
+
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                          <label>Imagen:</label>
+                          <input type="file" class="form-control" name="imagen" id="imagen" >
+                        </div>
+                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                          <label>Código:</label>
+                          <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código de Barras">
                         </div>
 
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

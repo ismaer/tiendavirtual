@@ -11,6 +11,14 @@ function init()
 		guardaryeditar(e);
 
 	})
+
+	//Cargamos los items al select categoria
+	$.post("../ajax/articulo.php?op=selectCategoria", function(r)
+	{
+		$("#idcategoria").html(r);
+		$("#idcategoria").selectpicker('refresh');
+		
+	});
 }
 
 //Función limpiar 
@@ -105,7 +113,7 @@ function guardaryeditar(e)
 
 function mostrar(idarticulo)
 {
-	$.post("../ajax/articulo.php?p=mostrar",{idarticulo : idarticulo}, function(data, status)
+	$.post("../ajax/articulo.php?op=mostrar",{idarticulo : idarticulo}, function(data, status)
 	{
 		data = 	JSON.parse(data);
 		mostrarform(true);
