@@ -49,8 +49,8 @@ function cancelarform()
 }
 //Funcion Listar
 function listar()
-{
-	tabla=$('#tbllistado').dataTable(
+{	
+	tabla=$('#tbllistado').dataTable( 
 	{
 		"aProcessing": true, //Activamos el procesamiento del datatables
 		"aServerSide": true, //Paginación y filtrados realizados por el servidor
@@ -64,7 +64,7 @@ function listar()
 		"ajax":
 				{
 					url:'../ajax/articulo.php?op=listar',
-					type : "get",
+					type : 'get',
 					dataType : "json",
 					error: function(e){
 						console.log(e.responseText);

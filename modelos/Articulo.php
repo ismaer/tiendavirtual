@@ -3,7 +3,7 @@
 //Incluimos inicialmente la conexion a la base de datos
 require "../config/Conexion.php";
 
-Class Categoria
+Class Articulo
 {
 	//Implementamos nuestro constructor
 	public function __construct()
