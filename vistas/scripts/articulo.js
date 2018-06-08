@@ -19,6 +19,7 @@ function init()
 		$("#idcategoria").selectpicker('refresh');
 		
 	});
+	$("#imagenmuestra").hide();
 }
 
 //Función limpiar 
@@ -124,6 +125,9 @@ function mostrar(idarticulo)
 		$("#nombre").val(data.nombre);
 		$("#stock").val(data.stock);
 		$("#descripcion").val(data.descripcion);
+		$("#imagenmuestra").show();
+		$("#imagenmuestra").attr("src", "../files/articulos/"+data.imagen);
+		$("#imagenactual").val(data.imagen);
 		$("#idarticulo").val(data.idarticulo);
 	});
 }
