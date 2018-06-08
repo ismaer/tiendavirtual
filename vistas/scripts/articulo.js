@@ -119,6 +119,7 @@ function mostrar(idarticulo)
 		mostrarform(true);
 
 		$("#idcategoria").val(data.idcategoria);
+		$("#idcategoria").selectpicker('refresh');
 		$("#codigo").val(data.codigo);
 		$("#nombre").val(data.nombre);
 		$("#stock").val(data.stock);
