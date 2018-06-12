@@ -28,6 +28,10 @@ function limpiar()
 	$("#nombre").val("");
 	$("#descripcion").val("");
 	$("#stock").val("");
+	$("#imagenmuestra").attr("src", "");
+	$("#imagenactual").val("");
+	$("#print").hide();
+	$("#idarticulo").val("");
 }
 
 //Funcion mostrar formulario
@@ -168,6 +172,13 @@ function generarbarcode()
 {
 	codigo=$("#codigo").val();
 	JsBarcode("#barcode", codigo);
+	$("#print").show();
+}
+//Funcion para imprimir el codigo de barras
+
+function imprimir()
+{
+	$("#print").printArea();
 }
 
 init();

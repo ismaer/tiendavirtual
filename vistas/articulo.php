@@ -12,7 +12,7 @@ ini_set('display_errors', 1);
               <div class="col-md-12">
                 <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title">Articulo <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+                          <h1 class="box-title">Articulo <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
@@ -75,7 +75,8 @@ ini_set('display_errors', 1);
                           <label>Código:</label>
                           <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código de Barras">
                           <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
-                          <div>
+                          <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
+                          <div id="print">
                             <svg id="barcode"> </svg>>
                           </div>
                         </div>
@@ -99,4 +100,5 @@ ini_set('display_errors', 1);
 require 'footer.php';
 ?>
 <script type="text/javascript" src="../public/js/JsBarcode.all.min.js"> </script>
+<script type="text/javascript" src="../public/js/jquery.PrintArea.js"> </script>
 <script type="text/javascript" src="scripts/articulo.js"> </script>
