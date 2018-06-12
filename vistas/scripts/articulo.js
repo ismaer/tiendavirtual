@@ -128,6 +128,7 @@ function mostrar(idarticulo)
 		$("#imagenmuestra").attr("src", "../files/articulos/"+data.imagen);
 		$("#imagenactual").val(data.imagen);
 		$("#idarticulo").val(data.idarticulo);
+		generarbarcode();
 
 	});
 }
@@ -160,6 +161,13 @@ function activar(idarticulo)
 
 	})
 	
+}
+//funcion para generar el codigo de barras
+
+function generarbarcode()
+{
+	codigo=$("#codigo").val();
+	JsBarcode("#barcode", codigo);
 }
 
 init();
