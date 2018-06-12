@@ -17,7 +17,6 @@ function init()
 	{
 		$("#idcategoria").html(r);
 		$("#idcategoria").selectpicker('refresh');
-		
 	});
 	$("#imagenmuestra").hide();
 }
@@ -129,6 +128,7 @@ function mostrar(idarticulo)
 		$("#imagenmuestra").attr("src", "../files/articulos/"+data.imagen);
 		$("#imagenactual").val(data.imagen);
 		$("#idarticulo").val(data.idarticulo);
+
 	});
 }
 //Funcion para desactivar registros
