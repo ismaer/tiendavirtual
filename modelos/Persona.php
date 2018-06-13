@@ -3,7 +3,7 @@
 //Incluimos inicialmente la conexion a la base de datos
 require "../config/Conexion.php";
 
-Class Categoria
+Class Persona
 {
 	//Implementamos nuestro constructor
 	public function __construct()
@@ -12,56 +12,47 @@ Class Categoria
 	}
 
 	//Implementamos un metodo para insertar registros
-	public function insertar($nombre, $descripcion)
+	public function insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email)
 	{
-		$sql = "INSERT INTO categoria (nombre, descripcion, condicion)
-		VALUES ('$nombre', '$descripcion', '1')";
+		$sql = "INSERT INTO persona (tipo_persona,nombre,tipo_documento,num_documento,direccion,telefono,email)
+		VALUES ('$tipo_persona' , '$nombre' , '$tipo_documento' , '$num_documento' , '$direccion' , '$telefono' , '$email')";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idcategoria, $nombre, $descripcion)
+	public function editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email)
 	{
-		$sql = "UPDATE categoria SET nombre='$nombre', descripcion='$descripcion'
-		WHERE idcategoria='$idcategoria'";
+		$sql = "UPDATE persona SET tipo_persona='$tipo_persona', nombre='$nombre', tipo_documento='$tipo_documento', num_documento='$num_documento', direccion='$direccion', telefono='$telefono', email='$email'
+		WHERE idpersona='$idpersona'";
 		return ejecutarConsulta($sql);
 	}
 
-	//Implementamos un método para desactivar categorias
-	public function desactivar($idcategoria)
+	//Implementamos un método para eliminar categorias
+	public function eliminar($idpersona)
 	{
-		$sql = "UPDATE categoria SET condicion='0'
-		WHERE idcategoria='$idcategoria'";
-		return ejecutarConsulta($sql);
-	}
-
-	//Implementamos un método para activar categorias
-	public function activar($idcategoria)
-	{
-		$sql = "UPDATE categoria SET condicion='1'
-		WHERE idcategoria='$idcategoria'";
+		$sql = "DELETE persona WHERE idpersona='$idpersona'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementar un método para mostrar los datos de un registro a modificar
-	public function mostrar($idcategoria)
+	public function mostrar($idpersona)
 	{
 		$sql = "SELECT * FROM categoria 
-		WHERE idcategoria='$idcategoria'";
+		WHERE idpersona='$idpersona'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
-	//Implementar un método para listar los registros
-	public function listar()
+	//Implementar un método para listar los registros de provedores
+	public function listarp()
 	{
-		$sql = "SELECT * FROM categoria";
+		$sql = "SELECT * FROM persona WHERE tipo_persona='Proveedor'";
 		return ejecutarConsulta($sql);
 	}
 
-	//Implementar un método para listar los registros y mostrar en el select
-	public function select()
+	//Implementar un método para listar los registros de clientes
+	public function listarp()
 	{
-		$sql = "SELECT * FROM categoria where condicion=1 ";
+		$sql = "SELECT * FROM persona WHERE tipo_persona='Cliente'";
 		return ejecutarConsulta($sql);
 	}
 
