@@ -37,7 +37,7 @@ Class Persona
 	//Implementar un método para mostrar los datos de un registro a modificar
 	public function mostrar($idpersona)
 	{
-		$sql = "SELECT * FROM categoria 
+		$sql = "SELECT * FROM persona 
 		WHERE idpersona='$idpersona'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
@@ -50,7 +50,7 @@ Class Persona
 	}
 
 	//Implementar un método para listar los registros de clientes
-	public function listarp()
+	public function listarc()
 	{
 		$sql = "SELECT * FROM persona WHERE tipo_persona='Cliente'";
 		return ejecutarConsulta($sql);
